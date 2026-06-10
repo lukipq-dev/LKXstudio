@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.png">
 <title>LKX Studio</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial,sans-serif}
@@ -20,6 +21,12 @@ backdrop-filter:blur(10px);
 z-index:1000;
 }
 .logo{
+  .logo img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:50%;
+}
 width:55px;height:55px;border-radius:50%;
 background:#222;display:flex;align-items:center;justify-content:center;
 border:2px dashed #ec4899;
@@ -34,6 +41,9 @@ padding:80px 20px 20px 20px;
 text-align:center;
 }
 .hero h1{
+  text-shadow:
+0 0 20px rgba(139,92,246,.5),
+0 0 40px rgba(236,72,153,.3);
 font-size:70px;
 background:linear-gradient(90deg,#8b5cf6,#ec4899);
 -webkit-background-clip:text;
