@@ -241,9 +241,9 @@ border-radius:20px;
 <div class="overlay">The Last Kid</div>
 </div>
 
-<div class="card">
-<div class="placeholder">COMING SOON</div>
-<div class="overlay">Coming Soon</div>
+<div class="card" id="openRunner">
+<img src="RunnerIcon.png">
+<div class="overlay">Speed Ascension</div>
 </div>
 
 </div>
@@ -369,9 +369,95 @@ Trailer
 
 </div>
 
+  <div id="runner" class="hidden gamePage">
+
+<button class="back" onclick="goHome()">← Back</button>
+
+<div class="hero">
+
+<h1>Speed Runner</h1>
+
+<img src="RunnerIcon.png" class="game-icon">
+
+<p>
+Run faster, level up, unlock new worlds and become the fastest player.
+Every level increases your speed and helps you reach new stages.
+</p>
+
+<div class="buttons">
+
+<button class="btn play" onclick="playRunner()">
+Play on Roblox
+</button>
+
+<button class="btn trailer" onclick="scrollRunnerTrailer()">
+Watch Trailer
+</button>
+
+</div>
+
+</div>
+
+<section style="text-align:center;">
+
+<h2>About The Game</h2>
+
+<p>
+A fast-paced Roblox simulator where you collect levels, gain speed and explore multiple worlds.
+</p>
+
+</section>
+
+<section style="text-align:center;">
+
+<h2 style="margin-top:80px;">Game Features</h2>
+
+<div class="features">
+
+<div class="card">
+<h3>Level System</h3>
+<p>Gain levels to become faster.</p>
+</div>
+
+<div class="card">
+<h3>Multiple Worlds</h3>
+<p>Unlock and explore new areas.</p>
+</div>
+
+<div class="card">
+<h3>Speed Progression</h3>
+<p>The more you play, the faster you get.</p>
+</div>
+
+<div class="card">
+<h3>Stages</h3>
+<p>Reach checkpoints and advance.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="runnerTrailer">
+
+<h2 style="text-align:center;margin-top:80px;">
+Trailer
+</h2>
+
+<div class="video">
+<video controls>
+<source src="RunnerTrailer.mp4" type="video/mp4">
+</video>
+</div>
+
+</section>
+
+</div>
+
 <script>
 function goHome(){
 document.getElementById("thelastkid").classList.add("hidden");
+document.getElementById("runner").classList.add("hidden");
 document.getElementById("home").classList.remove("hidden");
 window.scrollTo(0,0);
 }
@@ -379,6 +465,12 @@ window.scrollTo(0,0);
 document.getElementById("openTLK").onclick=function(){
 document.getElementById("home").classList.add("hidden");
 document.getElementById("thelastkid").classList.remove("hidden");
+window.scrollTo(0,0);
+};
+
+  document.getElementById("openRunner").onclick=function(){
+document.getElementById("home").classList.add("hidden");
+document.getElementById("runner").classList.remove("hidden");
 window.scrollTo(0,0);
 };
 
@@ -438,4 +530,16 @@ window.open(
 
 </body>
 </html>'''
+
+function playRunner(){
+window.open(
+"https://www.roblox.com/games/TWOJ_ID_GRY",
+"_blank"
+);
+}
+
+function scrollRunnerTrailer(){
+document.getElementById("runnerTrailer")
+.scrollIntoView({behavior:"smooth"});
+}
 
