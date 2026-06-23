@@ -1,6 +1,7 @@
 
 
 
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -12,231 +13,52 @@
 body{background:#090611;color:white;overflow-x:hidden}
 canvas{position:fixed;inset:0;z-index:-1}
 
-header{
-position:fixed;top:0;left:0;width:100%;
-display:flex;align-items:center;gap:15px;
-padding:15px 30px;
-background:rgba(0,0,0,.35);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
-.logo{
-  .logo img{
-width:100%;
-height:100%;
-object-fit:cover;
-border-radius:50%;
-}
-width:55px;height:55px;border-radius:50%;
-background:#222;display:flex;align-items:center;justify-content:center;
-border:2px dashed #ec4899;
-}
-.hero{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:flex-start;
-align-items:center;
-padding:80px 20px 20px 20px;
-text-align:center;
-}
-.hero h1{
-  text-shadow:
-0 0 20px rgba(139,92,246,.5),
-0 0 40px rgba(236,72,153,.3);
-font-size:70px;
-background:linear-gradient(90deg,#8b5cf6,#ec4899);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-.hero p{max-width:700px;opacity:.85;margin-top:15px}
+header{position;top:0;left:0;width:100%;display;align-items;gap:15px;padding:15px 30px;background(0,0,0,.35);backdrop-filter(10px);z-index:1000;}.logo{.logo img{width:100%;height:100%;object-fit;border-radius:50%;}width:55px;height:55px;border-radius:50%;background:#222;display;align-items;justify-content;border:2px dashed #ec4899;}.hero{min-height:100vh;display;flex-direction;justify-content;align-items;padding:80px 20px 20px 20px;text-align;}.hero h1{text-shadow:0 0 20px rgba(139,92,246,.5),0 0 40px rgba(236,72,153,.3);font-size:70px;background(90deg,#8b5cf6,#ec4899);-webkit-background-clip;-webkit-text-fill-color;}.hero p{max-width:700px;opacity:.85;margin-top:15px}
 
-.games{
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
-margin-top:60px;
-}
+.games{display;justify-content;gap:40px;flex-wrap;margin-top:60px;}
 
-.card{
-width:420px;
-height:260px;
-border-radius:25px;
-overflow:hidden;
-position:relative;
-cursor:pointer;
-transform-style:preserve-3d;
-transition:.15s;
-border:1px solid rgba(255,255,255,.15);
-background:#141020;
-}
+.card{width:420px;height:260px;border-radius:25px;overflow;position;cursor;transform-style;transition:.15s;border:1px solid rgba(255,255,255,.15);background:#141020;}
 
-.card img{
-width:100%;height:100%;object-fit:cover;
-}
+.card img{width:100%;height:100%;object-fit;}
 
-.placeholder{
-width:100%;height:100%;
-display:flex;align-items:center;justify-content:center;
-font-size:26px;font-weight:bold;
-background:linear-gradient(135deg,#8b5cf6,#ec4899);
-}
+.placeholder{width:100%;height:100%;display;align-items;justify-content;font-size:26px;font-weight;background(135deg,#8b5cf6,#ec4899);}
 
-.overlay{
-position:absolute;
-inset:0;
-background:linear-gradient(to top,rgba(0,0,0,.9),transparent);
-display:flex;
-align-items:end;
-padding:20px;
-font-size:28px;
-font-weight:bold;
-}
+.overlay{position;inset:0;background(to top,rgba(0,0,0,.9),transparent);display;align-items;padding:20px;font-size:28px;font-weight;}
 
-.hidden{display:none}
+.hidden{display}
 
-  .page-transition{
-position:fixed;
-z-index:99999;
-overflow:hidden;
-pointer-events:none;
-transition:
-left .55s cubic-bezier(.2,.8,.2,1),
-top .55s cubic-bezier(.2,.8,.2,1),
-width .55s cubic-bezier(.2,.8,.2,1),
-height .55s cubic-bezier(.2,.8,.2,1),
-border-radius .55s cubic-bezier(.2,.8,.2,1),
-opacity .55s ease;
-}
+.back{position;top:30px;left:20px;padding:12px 18px;border;border-radius:12px;background:#8b5cf6;color;cursor;z-index:1000;}
 
-.page-transition img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
+.gamePage{padding-top:100px;}
 
-.fade-page{
-opacity:0;
-transition:opacity .25s ease;
-}
+.note{padding:20px;background:#151028;border-radius:15px;margin:20px auto;max-width:900px;border:1px dashed #ec4899;}
 
-.back{
-position:fixed;
-top:30px;
-left:20px;
-padding:12px 18px;
-border:none;
-border-radius:12px;
-background:#8b5cf6;
-color:white;
-cursor:pointer;
-z-index:1000;
-}
+.game-icon{width:220px;margin:30px 0;border-radius:25px;box-shadow:0 10px 40px rgba(0,0,0,.6);}
 
-.gamePage{
-padding-top:100px;
-}
+.buttons{display;gap:15px;justify-content;flex-wrap;margin-top:25px;}
 
-.note{
-padding:20px;
-background:#151028;
-border-radius:15px;
-margin:20px auto;
-max-width:900px;
-border:1px dashed #ec4899;
-}
+.btn{padding:14px 28px;border;border-radius:16px;font-size:16px;font-weight;cursor;transition:.2s;}
 
-.game-icon{
-width:220px;
-margin:30px 0;
-border-radius:25px;
-box-shadow:0 10px 40px rgba(0,0,0,.6);
-}
+.btn{transform(1.08);}
 
-.buttons{
-display:flex;
-gap:15px;
-justify-content:center;
-flex-wrap:wrap;
-margin-top:25px;
-}
+.play{background(90deg,#8b5cf6,#ec4899);color;}
 
-.btn{
-padding:14px 28px;
-border:none;
-border-radius:16px;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
-transition:.2s;
-}
+.trailer{background;border:2px solid #ec4899;color:#ec4899;}
 
-.btn:hover{
-transform:scale(1.08);
-}
+.features{margin-top:50px;display;grid-template-columns(2,1fr);gap:20px;max-width:900px;margin-left;margin-right;}
 
-.play{
-background:linear-gradient(90deg,#8b5cf6,#ec4899);
-color:white;
-}
+.features .card{background:#151028;padding:30px;border-radius:20px;height;width;cursor;transition:.25s;}
 
-.trailer{
-background:transparent;
-border:2px solid #ec4899;
-color:#ec4899;
-}
+.features .card{transform(-10px) scale(1.03);box-shadow:0 0 30px rgba(236,72,153,.35);border:1px solid #ec4899;background:#1b1430;}
 
-.features{
-margin-top:50px;
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:20px;
-max-width:900px;
-margin-left:auto;
-margin-right:auto;
-}
+.video{margin-top:40px;border-radius:20px;overflow;box-shadow:0 25px 70px rgba(0,0,0,.7);}
 
-.features .card{
-background:#151028;
-padding:30px;
-border-radius:20px;
-height:auto;
-width:auto;
-cursor:pointer;
-transition:.25s;
-}
+.video{max-width:900px;margin:40px auto;}
 
-.features .card:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 0 30px rgba(236,72,153,.35);
-border:1px solid #ec4899;
-background:#1b1430;
-}
+.video video{width:100%;display;border-radius:20px;}
 
-.video{
-margin-top:40px;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 25px 70px rgba(0,0,0,.7);
-}
+@media(max-width:768px){.hero h1{font-size:50px}.card{width:90%;height:220px}}</style>
 
-.video{
-max-width:900px;
-margin:40px auto;
-}
-
-.video video{
-width:100%;
-display:block;
-border-radius:20px;
-}
-
-@media(max-width:768px){
-.hero h1{font-size:50px}
-.card{width:90%;height:220px}
-}
-</style>
 </head>
 <body>
 
@@ -298,9 +120,7 @@ background:linear-gradient(90deg,#8b5cf6,#ec4899);
 color:white;
 box-shadow:0 0 25px rgba(236,72,153,.4);
 transition:.2s;
-">
-JOIN
-</button>
+">JOIN</button>
 
 </section>
 </div>
@@ -322,6 +142,7 @@ After a sudden abduction, you wake up inside a mysterious house.
 Every door is locked. Every room hides a clue.
 
 Explore the house, search for keys, and slowly uncover the truth behind the person who brought you here.
+
 </p>
 
 <div class="buttons">
@@ -487,50 +308,16 @@ document.getElementById("home").classList.remove("hidden");
 window.scrollTo(0,0);
 }
 
-function openGame(cardId,pageId){
-
-const card=document.getElementById(cardId);
-const page=document.getElementById(pageId);
-
-const rect=card.getBoundingClientRect();
-const img=card.querySelector("img");
-
-const transition=document.createElement("div");
-transition.className="page-transition";
-
-transition.style.left=rect.left+"px";
-transition.style.top=rect.top+"px";
-transition.style.width=rect.width+"px";
-transition.style.height=rect.height+"px";
-transition.style.borderRadius="25px";
-
-transition.innerHTML=`<img src="${img.src}">`;
-
-document.body.appendChild(transition);
-
-page.classList.remove("hidden");
-page.style.opacity="0";
-page.style.transition="opacity .55s ease";
-
-requestAnimationFrame(()=>{
-
-transition.style.left="0px";
-transition.style.top="0px";
-transition.style.width="100vw";
-transition.style.height="100vh";
-transition.style.borderRadius="0px";
-
-setTimeout(()=>{
-transition.style.opacity="0";
-page.style.opacity="1";
-},150);
-
-document.getElementById("openTLK").onclick=()=>{
-openGame("openTLK","thelastkid");
+document.getElementById("openTLK").onclick=function(){
+document.getElementById("home").classList.add("hidden");
+document.getElementById("thelastkid").classList.remove("hidden");
+window.scrollTo(0,0);
 };
 
-document.getElementById("openRunner").onclick=()=>{
-openGame("openRunner","runner");
+  document.getElementById("openRunner").onclick=function(){
+document.getElementById("home").classList.add("hidden");
+document.getElementById("runner").classList.remove("hidden");
+window.scrollTo(0,0);
 };
 
 document.querySelectorAll('.card').forEach(card=>{
