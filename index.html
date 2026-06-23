@@ -522,10 +522,15 @@ transition.style.left=rect.left+"px";
 transition.style.top=rect.top+"px";
 transition.style.width=rect.width+"px";
 transition.style.height=rect.height+"px";
+transition.style.borderRadius="25px";
 
 transition.innerHTML=`<img src="${img.src}">`;
 
 document.body.appendChild(transition);
+
+page.classList.remove("hidden");
+page.style.opacity="0";
+page.style.transition="opacity .55s ease";
 
 requestAnimationFrame(()=>{
 
@@ -537,9 +542,24 @@ transition.style.borderRadius="0px";
 
 setTimeout(()=>{
 transition.style.opacity="0";
+page.style.opacity="1";
 },150);
 
 });
+
+setTimeout(()=>{
+
+document.getElementById("home").classList.add("hidden");
+
+setTimeout(()=>{
+transition.remove();
+},300);
+
+window.scrollTo(0,0);
+
+},550);
+
+}
 
 });
 
