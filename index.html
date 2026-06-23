@@ -97,8 +97,6 @@ font-weight:bold;
 .hidden{display:none}
 
   .page-transition{
-
-    .page-transition{
 position:fixed;
 z-index:99999;
 overflow:hidden;
@@ -118,15 +116,7 @@ height:100%;
 object-fit:cover;
 }
 
-.page-transition::after{
-content:"";
-position:absolute;
-inset:0;
-background:black;
-opacity:0;
-transition:opacity .55s ease;
-}
-    
+  .page-transition{
 position:fixed;
 z-index:99999;
 border-radius:25px;
@@ -546,12 +536,7 @@ transition.style.height="100vh";
 transition.style.borderRadius="0px";
 
 setTimeout(()=>{
-
 transition.style.opacity="0";
-
-const overlay =
-window.getComputedStyle(transition,'::after');
-
 },150);
 
 });
@@ -563,6 +548,9 @@ setTimeout(()=>{
 document.getElementById("home").classList.add("hidden");
 
 page.classList.remove("hidden");
+
+  page.style.opacity="0";
+page.style.transition="opacity .5s ease";
 page.classList.add("fade-page");
 
 window.scrollTo(0,0);
