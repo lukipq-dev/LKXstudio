@@ -96,6 +96,31 @@ font-weight:bold;
 
 .hidden{display:none}
 
+  .page-transition{
+position:fixed;
+z-index:99999;
+border-radius:25px;
+overflow:hidden;
+pointer-events:none;
+transition:
+left .45s ease,
+top .45s ease,
+width .45s ease,
+height .45s ease,
+border-radius .45s ease;
+}
+
+.page-transition img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.fade-page{
+opacity:0;
+transition:opacity .25s ease;
+}
+
 .back{
 position:fixed;
 top:30px;
@@ -462,16 +487,63 @@ document.getElementById("home").classList.remove("hidden");
 window.scrollTo(0,0);
 }
 
-document.getElementById("openTLK").onclick=function(){
+function openGame(cardId,pageId){
+
+const card=document.getElementById(cardId);
+const page=document.getElementById(pageId);
+
+const rect=card.getBoundingClientRect();
+const img=card.querySelector("img");
+
+const transition=document.createElement("div");
+transition.className="page-transition";
+
+transition.style.left=rect.left+"px";
+transition.style.top=rect.top+"px";
+transition.style.width=rect.width+"px";
+transition.style.height=rect.height+"px";
+
+transition.innerHTML=`<img src="${img.src}">`;
+
+document.body.appendChild(transition);
+
+requestAnimationFrame(()=>{
+
+transition.style.left="0px";
+transition.style.top="0px";
+transition.style.width="100vw";
+transition.style.height="100vh";
+transition.style.borderRadius="0px";
+
+});
+
+setTimeout(()=>{
+
 document.getElementById("home").classList.add("hidden");
-document.getElementById("thelastkid").classList.remove("hidden");
+
+page.classList.remove("hidden");
+page.classList.add("fade-page");
+
 window.scrollTo(0,0);
+
+requestAnimationFrame(()=>{
+page.style.opacity="1";
+});
+
+setTimeout(()=>{
+transition.remove();
+},250);
+
+},450);
+
+}
+
+document.getElementById("openTLK").onclick=()=>{
+openGame("openTLK","thelastkid");
 };
 
-  document.getElementById("openRunner").onclick=function(){
-document.getElementById("home").classList.add("hidden");
-document.getElementById("runner").classList.remove("hidden");
-window.scrollTo(0,0);
+document.getElementById("openRunner").onclick=()=>{
+openGame("openRunner","runner");
 };
 
 document.querySelectorAll('.card').forEach(card=>{
